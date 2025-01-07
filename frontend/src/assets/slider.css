@@ -1,0 +1,72 @@
+/* Slider.css */
+.slider {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 400px; /* Adjust the height as needed */
+    background-color: #333;
+}
+
+.slider-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;
+    z-index: 2;
+}
+
+.slider-content h2 {
+    font-size: 2.5rem;
+    margin: 0;
+}
+
+.slider-content p {
+    font-size: 1.2rem;
+    margin: 10px 0;
+}
+
+.slider-content button {
+    background-color: #ff9800;
+    color: white;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.slider-content button:hover {
+    background-color: #e68900;
+}
+
+.slider-images {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    height: 100%;
+}
+
+.slider-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+.slider:hover .slider-images {
+    transform: translateX(-100%); /* You can add a smooth sliding effect */
+}
+
+/* Optional: Add keyframes for automatic sliding effect */
+@keyframes sliderMove {
+    0% { transform: translateX(0); }
+    33.33% { transform: translateX(-100%); }
+    66.66% { transform: translateX(-200%); }
+    100% { transform: translateX(0); }
+}
+
+.slider-images {
+    animation: sliderMove 15s infinite;
+}
